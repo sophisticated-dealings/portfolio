@@ -67,7 +67,7 @@ nav a:hover::after {
   text-align: center;
 
   /* 🔥 Background image */
-  background: url("your-image.jpg") no-repeat center center/cover;
+  background: url("bg.jpg") no-repeat center center/cover;
   
   color: #fff; /* ensures text is visible */
   position: relative;

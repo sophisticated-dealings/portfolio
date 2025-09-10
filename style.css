@@ -64,11 +64,28 @@ nav a:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #1f1c2c, #928dab);
-  color: #fff;
   text-align: center;
-  overflow: hidden;
+
+  /* 🔥 Background image */
+  background: url("your-image.jpg") no-repeat center center/cover;
+  
+  color: #fff; /* ensures text is visible */
+  position: relative;
 }
+
+/* Optional: dark overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+}
+
+.hero h1, .hero p {
+  position: relative; /* make text appear above overlay */
+  z-index: 1;
+}
+
 
 .hero h1 {
   font-size: 3rem;

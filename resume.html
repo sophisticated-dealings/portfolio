@@ -1,32 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Resume</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume — Melbin</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <nav class="navbar">
-       </nav>
+<body class="page-enter">
+  <header>
+    <div class="nav-inner container">
+      <div class="logo">Melbin</div>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html" class="active">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <header class="hero-section" style="background-image: url('assets/images/hero-resume.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>My Professional Resume</h1>
-            <a href="assets/docs/resume.pdf" download="YourName_Resume.pdf" class="cta-button">Download PDF</a>
-        </div>
-    </header>
+  <main style="padding-top:100px">
+    <section class="section container">
+      <h1>Resume</h1>
+      <p class="lead">Download or view the resume below. Replace `resume.pdf` with your file in the same folder.</p>
 
-    <main class="container page-content">
-        <div class="resume-container">
-            <iframe src="assets/docs/resume.pdf" width="100%" height="800px" style="border: none;"></iframe>
-        </div>
-    </main>
+      <!-- Replace the src in the iframe with your resume file path (resume.pdf) -->
+      <div style="background:var(--muted);padding:12px;border-radius:8px;box-shadow:var(--shadow)">
+        <iframe src="resume.pdf" title="Resume" style="width:100%;height:600px;border:none"></iframe>
+      </div>
 
-    <footer class="footer">
-        </footer>
+      <div style="margin-top:12px">
+        <a href="resume.pdf" download class="btn primary">Download Resume (PDF)</a>
+      </div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
+  <footer style="margin-top:48px">
+    <div class="container footer-content">© <span id="year5"></span> Melbin</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year5').textContent = new Date().getFullYear();</script>
 </body>
 </html>

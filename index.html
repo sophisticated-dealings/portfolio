@@ -1,56 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Home</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Melbin — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-
-    <div class="intro" id="intro">
-        <h1 class="logo-header">
-            <span class="logo">N</span>
-        </h1>
+<body class="page-enter">
+  <header>
+    <div class="nav-inner container">
+      <div class="logo" aria-label="Melbin logo"><span class="mark" aria-hidden="true"></span><span style="margin-left:8px">Melbin</span></div>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="Menu" title="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <nav class="navbar">
-        <a href="index.html" class="nav-logo">YOUR NAME</a>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+  <!-- Intro overlay mimicking Netflix logo reveal -->
+  <div class="intro-overlay" id="introOverlay" role="dialog" aria-modal="true" aria-label="Intro animation">
+    <div class="intro-content">
+      <div class="logo-animation" aria-hidden="true">
+        <!-- Letters animate via CSS delays (provided earlier in your other CSS if needed) -->
+        <span class="letter" style="animation-delay:0.08s">M</span>
+        <span class="letter" style="animation-delay:0.18s">E</span>
+        <span class="letter" style="animation-delay:0.28s">L</span>
+        <span class="letter" style="animation-delay:0.38s">B</span>
+        <span class="letter" style="animation-delay:0.48s">I</span>
+        <span class="letter" style="animation-delay:0.58s">N</span>
+      </div>
+      <div class="loading-bar" aria-hidden="true" style="margin-top:18px">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-background">
+        <!-- Inline SVG data-URI poster placeholder as hero image -->
+        <img class="hero-bg-img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='800'><rect width='100%' height='100%' fill='%230b0b0b'/><g fill='%23fff' opacity='0.06'><rect x='0' y='0' width='1600' height='200'/></g><text x='50%' y='55%' font-size='48' fill='%23eee' text-anchor='middle' font-family='Arial'>Featured — Cinematic Hero Poster</text></svg>" alt="Hero poster image" />
+        <div class="hero-gradient" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Cinematic Portfolio</div>
+          <h1 id="hero-title">Design & Build Experiences — Cinematic & Bold</h1>
+          <p>I'm Melbin — a developer crafting immersive UI and performant front-ends. Explore projects presented like movie posters.</p>
+          <div class="hero-buttons">
+            <button class="btn primary" onclick="scrollToProjects()">View Projects</button>
+            <button class="btn secondary" onclick="location.href='about.html'">About Me</button>
+          </div>
         </div>
-    </nav>
 
-    <header class="hero-section" style="background-image: url('assets/images/hero-home.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Creative Web Developer & Designer</h1>
-            <p>Crafting immersive digital experiences, one line of code at a time.</p>
-            <a href="projects.html" class="cta-button">View My Work</a>
+        <div class="poster" aria-hidden="true">
+          <!-- poster placeholder -->
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='260'><rect width='100%' height='100%' fill='%23222'/><text x='50%' y='52%' font-size='20' fill='%23fff' text-anchor='middle' font-family='Arial'>Featured Project Poster</text></svg>" alt="Featured project poster" />
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main class="container">
-        </main>
+    <!-- Featured Projects preview (on homepage this links to projects.html anchors) -->
+    <section class="section" id="projects-preview" aria-labelledby="featured-title">
+      <div class="container">
+        <h2 class="section-title" id="featured-title">Featured Projects</h2>
+        <p class="lead">A short preview — click any card to open the full project page.</p>
 
-    <footer class="footer">
-        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Twitter</a>
+        <div class="row">
+          <div class="row-scroll" role="list">
+            <!-- Card 1 -->
+            <article class="card" role="listitem" onclick="location.href='project1.html'">
+              <img loading="lazy" alt="E-Commerce poster"
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='338'><rect width='100%' height='100%' fill='%23222'/><text x='50%' y='52%' font-size='20' fill='%23fff' text-anchor='middle'>E-Commerce Platform</text></svg>">
+              <div class="overlay">E-Commerce Platform • React • Node</div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card" role="listitem" onclick="location.href='project2.html'">
+              <img loading="lazy" alt="Mobile UI poster"
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='338'><rect width='100%' height='100%' fill='%231f1f1f'/><text x='50%' y='52%' font-size='20' fill='%23fff' text-anchor='middle'>Mobile UI</text></svg>">
+              <div class="overlay">Mobile UI • React Native • Figma</div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card" role="listitem" onclick="location.href='project3.html'">
+              <img loading="lazy" alt="Data Viz poster"
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='338'><rect width='100%' height='100%' fill='%230f0f0f'/><text x='50%' y='52%' font-size='20' fill='%23fff' text-anchor='middle'>Data Dashboard</text></svg>">
+              <div class="overlay">Data Visualization • D3</div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card" role="listitem" onclick="location.href='project4.html'">
+              <img loading="lazy" alt="Portfolio poster"
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='338'><rect width='100%' height='100%' fill='%231a1a1a'/><text x='50%' y='52%' font-size='20' fill='%23fff' text-anchor='middle'>Portfolio Template</text></svg>">
+              <div class="overlay">Portfolio • HTML/CSS/JS</div>
+            </article>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div style="margin-top:18px">
+          <a href="projects.html" class="btn secondary" style="text-decoration:none">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title" class="section-title">Technical Skills</h2>
+        <p class="lead">Frontend, backend, design, and data — strong full-stack foundation.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+          <div class="stats-card">
+            <h3>Frontend</h3>
+            <div style="margin-top:8px">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+          <div class="stats-card">
+            <h3>Backend</h3>
+            <div style="margin-top:8px">
+              <span class="tag">Node.js</span>
+              <span class="tag">Python</span>
+              <span class="tag">Postgres</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </div>
+          <div class="stats-card">
+            <h3>Design</h3>
+            <div style="margin-top:8px">
+              <span class="tag">Figma</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">UX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content" style="align-items:flex-start;justify-content:space-between">
+      <div>
+        <strong>Quick Links</strong>
+        <div style="margin-top:8px"><a href="about.html">About</a> • <a href="projects.html">Projects</a> • <a href="resume.html">Resume</a></div>
+      </div>
+      <div>
+        <strong>Connect</strong>
+        <div style="margin-top:8px"><a href="#" aria-label="LinkedIn">LinkedIn</a> • <a href="#" aria-label="GitHub">GitHub</a></div>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <div style="margin-top:8px">your.email@example.com</div>
+      </div>
+    </div>
+    <div style="padding:14px 20px;color:var(--muted-text)">© <span id="year"></span> Melbin — Cinematic portfolio</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

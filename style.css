@@ -1,166 +1,409 @@
-/* --- RESET --- */
+/* === NETFLIX PORTFOLIO STYLES === */
+
+/* --- 1. Variables and Global Styles --- */
+:root {
+    --background-color: #141414;
+    --primary-red: #E50914;
+    --text-color: #ffffff;
+    --text-gray: #808080;
+    --dark-gray: #222222;
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* --- GLOBAL --- */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  scroll-behavior: smooth;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* --- HEADER --- */
-header {
-  background: #111;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav {
-  margin-top: 10px;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #f39c12;
-}
-
-/* underline animation */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background: #f39c12;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* --- HERO SECTION --- */
-.hero {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  /* 🔥 Background image */
-  background: url("bg.jpg") no-repeat center center/cover;
-  
-  color: #fff; /* ensures text is visible */
-  position: relative;
-}
-
-/* Optional: dark overlay for readability */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-}
-
-.hero h1, .hero p {
-  position: relative; /* make text appear above overlay */
-  z-index: 1;
-}
-
-
-.hero h1 {
-  font-size: 3rem;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
-}
-
-.hero p {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1.5s ease forwards;
-}
-
-/* keyframes */
-@keyframes fadeUp {
-  to {
+body.fade-in {
     opacity: 1;
-    transform: translateY(0);
-  }
 }
 
-/* --- SECTIONS --- */
-.section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* --- 2. Netflix Intro Animation --- */
+.intro {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
 }
 
-.section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
-  color: #222;
+.logo-header {
+    color: var(--primary-red);
+    font-size: 10vw;
+    text-shadow: 0 0 20px var(--primary-red);
+    animation: netflix-intro 2.5s forwards;
 }
 
-/* --- SKILLS & PROJECTS GRID --- */
-.skills, .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+@keyframes netflix-intro {
+    0% { transform: scale(1.5); opacity: 0; }
+    40% { transform: scale(1); opacity: 1; }
+    80% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(10); opacity: 0; }
 }
 
-/* --- CARD --- */
-.card {
-  background: #f4f4f4;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.intro.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+
+/* --- 3. Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
-/* --- FOOTER --- */
-footer {
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+.navbar.scrolled {
+    background-color: var(--background-color);
 }
 
-footer a {
-  color: #f39c12;
-  text-decoration: none;
+.nav-logo {
+    color: var(--primary-red);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-red);
+}
+
+.nav-link.active {
+    color: var(--primary-red);
+}
+
+/* --- 4. Hero Section --- */
+.hero-section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 2rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--background-color) 10%, rgba(20, 20, 20, 0.5) 50%, rgba(20, 20, 20, 0.8) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--primary-red);
+    color: var(--text-color);
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #f6121d;
+}
+
+.cta-button.secondary {
+    background-color: rgba(109, 109, 110, 0.7);
+}
+.cta-button.secondary:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+
+/* --- 5. Projects Page --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--dark-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    z-index: 5;
+}
+
+.project-card img {
+    width: 100%;
+    height: 400px; /* Consistent height */
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 1rem;
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    color: var(--text-gray);
+}
+
+
+/* --- 6. About Page --- */
+.page-content section {
+    margin-bottom: 4rem;
+}
+
+.page-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-red);
+    padding-left: 1rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-card {
+    background-color: var(--dark-gray);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+
+/* --- 7. Contact Page --- */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-gray);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--dark-gray);
+    border: 2px solid var(--dark-gray);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+
+.form-group .error-message {
+    color: var(--primary-red);
+    font-size: 0.9rem;
+    display: none; /* Hidden by default */
+    margin-top: 0.3rem;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: var(--primary-red);
+}
+
+.form-group.error .error-message {
+    display: block; /* Show on error */
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* --- 8. Resume Page --- */
+.resume-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- 9. Footer --- */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--dark-gray);
+}
+
+.social-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-red);
+}
+
+
+/* --- 10. Responsive Design --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--background-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--dark-gray);
+    }
+    
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
 }

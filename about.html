@@ -1,121 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | About Me</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Melbin</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <nav class="navbar">
-         </nav>
+<body class="page-enter">
+  <header>
+    <div class="nav-inner container">
+      <div class="logo">Melbin</div>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <header class="hero-section" style="background-image: url('assets/images/hero-about.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-             <img src="assets/images/your-headshot.jpg" alt="A professional headshot of [Your Name]" class="profile-pic">
-            <h1>The Developer Behind the Code</h1>
+  <main style="padding-top:100px">
+    <section class="hero hero-small" aria-labelledby="about-title">
+      <div class="hero-background">
+        <img class="hero-bg-img" alt="Profile hero" loading="lazy"
+          src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='800'><rect width='100%' height='100%' fill='%23151515'/><text x='50%' y='52%' font-size='36' fill='%23eee' text-anchor='middle'>About — Hero Poster</text></svg>">
+        <div class="hero-gradient"></div>
+      </div>
+
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <h1 id="about-title">About Me</h1>
+          <p class="lead">I'm Melbin — a BTech student and full-stack/front-end developer with a love for UI and systems that scale.</p>
+          <p>I enjoy combining product thinking, UX, and performant code to build delightful experiences.</p>
         </div>
-    </header>
 
-    <main class="container page-content">
-        <section id="bio">
-            <h2>My Story</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </section>
-
-        <section id="skills">
-            <h2>My Toolkit</h2>
-            <div class="skills-grid">
-                <div class="skill-card">HTML5</div>
-                <div <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | About Me</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <nav class="navbar">
-         </nav>
-
-    <header class="hero-section" style="background-image: url('assets/images/hero-about.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-             <img src="assets/images/your-headshot.jpg" alt="A professional headshot of [Your Name]" class="profile-pic">
-            <h1>The Developer Behind the Code</h1>
+        <div class="poster" aria-hidden="true">
+          <img alt="Profile poster" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='260'><rect width='100%' height='100%' fill='%23222'/><text x='50%' y='52%' font-size='20' fill='%23fff' text-anchor='middle'>Profile Image</text></svg>">
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main class="container page-content">
-        <section id="bio">
-            <h2>My Story</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </section>
+    <section class="section container">
+      <div class="about-grid">
+        <div>
+          <h2>My Story</h2>
+          <p>I started coding in grade 9... (replace with your story). I work on web apps, ML experiments, and product design.</p>
 
-        <section id="skills">
-            <h2>My Toolkit</h2>
-            <div class="skills-grid">
-                <div class="skill-card">HTML5</div>
-                <div class="skill-card">CSS3 & SASS</div>
-                <div class="skill-card">JavaScript (ES6+)</div>
-                <div class="skill-card">React</div>
-                <div class="skill-card">Node.js</div>
-                <div class="skill-card">Figma</div>
+          <h3 style="margin-top:12px">What I do</h3>
+          <ul>
+            <li>Full-stack web development</li>
+            <li>UI/UX & interaction design</li>
+            <li>Machine learning prototypes</li>
+          </ul>
+        </div>
+
+        <aside>
+          <div class="stats-card">
+            <h3>Experience</h3>
+            <div style="display:flex;gap:10px;margin-top:10px">
+              <div><strong>3+</strong><div class="text-muted">Years</div></div>
+              <div><strong>20+</strong><div class="text-muted">Projects</div></div>
             </div>
-        </section>
+          </div>
 
-         <section id="experience">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Senior Developer - Tech Solutions Inc.</h3>
-                    <p><em>Jan 2022 - Present</em></p>
-                    <p>Leading front-end development on enterprise-level applications...</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Web Developer - Creative Agency</h3>
-                    <p><em>Jun 2019 - Dec 2021</em></p>
-                    <p>Developed and maintained client websites using modern web technologies...</p>
-                </div>
-            </div>
-        </section>
-    </main>
+          <div style="margin-top:16px">
+            <h3>Contact</h3>
+            <p>your.email@example.com</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
 
-    <footer class="footer">
-         </footer>
+  <footer style="margin-top:48px">
+    <div class="container footer-content">© <span id="year4"></span> Melbin</div>
+  </footer>
 
-    <script src="js/script.js"></script>
-</body>
-</html>="skill-card">CSS3 & SASS</div>
-                <div class="skill-card">JavaScript (ES6+)</div>
-                <div class="skill-card">React</div>
-                <div class="skill-card">Node.js</div>
-                <div class="skill-card">Figma</div>
-            </div>
-        </section>
-
-         <section id="experience">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Senior Developer - Tech Solutions Inc.</h3>
-                    <p><em>Jan 2022 - Present</em></p>
-                    <p>Leading front-end development on enterprise-level applications...</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Web Developer - Creative Agency</h3>
-                    <p><em>Jun 2019 - Dec 2021</em></p>
-                    <p>Developed and maintained client websites using modern web technologies...</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-         </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script>document.getElementById('year4').textContent = new Date().getFullYear();</script>
 </body>
 </html>

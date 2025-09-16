@@ -1,52 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Projects</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Melbin</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <nav class="navbar">
-        </nav>
+<body class="page-enter">
+  <header>
+    <div class="nav-inner container">
+      <div class="logo"><span class="mark" aria-hidden="true"></span>Melbin</div>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
 
-    <header class="hero-section" style="background-image: url('assets/images/hero-projects.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>My Collection of Work</h1>
-            <p>A selection of projects that I'm proud of.</p>
-        </div>
-    </header>
+  <main style="padding-top:100px">
+    <section class="section container">
+      <h1 class="section-title">All Projects</h1>
+      <p class="lead">Click any poster to view the project detail page.</p>
 
-    <main class="container page-content">
-        <div class="projects-grid">
-            <a href="project-detail.html" class="project-card">
-                <img src="assets/images/project-1.jpg" alt="Project One Poster">
-                <div class="project-info">
-                    <h3>Project One Title</h3>
-                    <p>Web Application</p>
-                </div>
-            </a>
-            <a href="project-detail.html" class="project-card">
-                <img src="assets/images/project-2.jpg" alt="Project Two Poster">
-                <div class="project-info">
-                    <h3>Project Two Title</h3>
-                    <p>UI/UX Design</p>
-                </div>
-            </a>
-            <a href="project-detail.html" class="project-card">
-                <img src="assets/images/project-3.jpg" alt="Project Three Poster">
-                <div class="project-info">
-                    <h3>Project Three Title</h3>
-                    <p>Mobile App Concept</p>
-                </div>
-            </a>
-            </div>
-    </main>
-    
-    <footer class="footer">
-        </footer>
+      <div class="grid" role="list">
+        <!-- Project tile linking to project detail pages -->
+        <article class="project-card" role="listitem" onclick="location.href='project1.html'">
+          <img alt="E-commerce poster" loading="lazy"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%23222'/><text x='50%' y='52%' font-size='28' fill='%23fff' text-anchor='middle'>E-Commerce Platform</text></svg>">
+          <div class="project-meta">
+            <h3>E-Commerce Platform</h3>
+            <p style="color:var(--muted-text)">Full-stack store with payment integration and dashboard.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+          </div>
+        </article>
 
-    <script src="script.js"></script>
+        <article class="project-card" onclick="location.href='project2.html'">
+          <img alt="Mobile UI poster" loading="lazy"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%231f1f1f'/><text x='50%' y='52%' font-size='28' fill='%23fff' text-anchor='middle'>Mobile App UI</text></svg>">
+          <div class="project-meta">
+            <h3>Mobile App UI</h3>
+            <p style="color:var(--muted-text)">Design system & UI kit for mobile health app.</p>
+            <div class="tags"><span class="tag">Figma</span><span class="tag">React Native</span></div>
+          </div>
+        </article>
+
+        <article class="project-card" onclick="location.href='project3.html'">
+          <img alt="Data dashboard poster" loading="lazy"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230f0f0f'/><text x='50%' y='52%' font-size='28' fill='%23fff' text-anchor='middle'>Data Dashboard</text></svg>">
+          <div class="project-meta">
+            <h3>Data Dashboard</h3>
+            <p style="color:var(--muted-text)">Interactive analytics with real-time streams.</p>
+            <div class="tags"><span class="tag">D3.js</span><span class="tag">Python</span></div>
+          </div>
+        </article>
+
+        <article class="project-card" onclick="location.href='project4.html'">
+          <img alt="Portfolio poster" loading="lazy"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%231a1a1a'/><text x='50%' y='52%' font-size='28' fill='%23fff' text-anchor='middle'>Portfolio</text></svg>">
+          <div class="project-meta">
+            <h3>Portfolio Template</h3>
+            <p style="color:var(--muted-text)">This very template — responsive & accessible.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="margin-top:48px">
+    <div class="container footer-content">
+      <div>© <span id="year2"></span> Melbin</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
 </body>
 </html>

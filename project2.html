@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-Commerce Platform — Melbin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-enter">
+  <header>
+    <div class="nav-inner container">
+      <div class="logo">Melbin</div>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding-top:100px">
+    <section class="hero hero-small" aria-labelledby="project-title">
+      <div class="hero-background">
+        <img class="hero-bg-img" alt="E-Commerce hero" loading="lazy"
+          src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='800'><rect width='100%' height='100%' fill='%23222'/><text x='50%' y='52%' font-size='36' fill='%23fff' text-anchor='middle'>E-Commerce — Hero Poster</text></svg>">
+        <div class="hero-gradient"></div>
+      </div>
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <h1 id="project-title">E-Commerce Platform</h1>
+          <p class="lead">Full-stack store with checkout, admin dashboard and analytics.</p>
+          <div style="display:flex;gap:12px;margin-top:12px">
+            <a class="btn primary" href="#" onclick="event.preventDefault()">View Live</a>
+            <a class="btn secondary" href="#" download>Download Code</a>
+          </div>
+        </div>
+        <div class="poster" aria-hidden="true">
+          <img alt="Project poster" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='260'><rect width='100%' height='100%' fill='%231a1a1a'/><text x='50%' y='52%' font-size='20' fill='%23fff' text-anchor='middle'>Store Poster</text></svg>">
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Overview</h2>
+      <p>This project is a complete e-commerce solution with cart, payment integration and an admin dashboard for managing products and orders.</p>
+
+      <h3 style="margin-top:14px">Tech Stack</h3>
+      <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">Stripe</span></div>
+
+      <h3 style="margin-top:18px">Highlights</h3>
+      <ul>
+        <li>Custom product CMS</li>
+        <li>Secure payment flow using Stripe</li>
+        <li>Admin analytics dashboard with charts</li>
+      </ul>
+
+      <h3 style="margin-top:18px">Screenshots</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px">
+        <img alt="screenshot1" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360'><rect width='100%' height='100%' fill='%230f0f0f'/><text x='50%' y='50%' font-size='20' fill='%23fff' text-anchor='middle'>Screenshot</text></svg>">
+        <img alt="screenshot2" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360'><rect width='100%' height='100%' fill='%231a1a1a'/><text x='50%' y='50%' font-size='20' fill='%23fff' text-anchor='middle'>Screenshot</text></svg>">
+      </div>
+    </section>
+  </main>
+
+  <footer style="margin-top:48px">
+    <div class="container footer-content">© <span id="year3"></span> Melbin</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year3').textContent = new Date().getFullYear();</script>
+</body>
+</html>
